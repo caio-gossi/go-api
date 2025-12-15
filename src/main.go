@@ -12,7 +12,7 @@ import (
 func main() {
 
 	var mux *http.ServeMux = http.NewServeMux()
-	mux.HandleFunc("/health", healthHandler)
+	mux.HandleFunc("/health", handlers.HealthHandler)
 	mux.HandleFunc("/test-message", handlers.UserHandler)
 	mux.Handle("/swagger/", httpSwagger.WrapHandler)
 
@@ -22,9 +22,4 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func healthHandler(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("OK"))
 }

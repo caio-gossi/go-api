@@ -1,0 +1,40 @@
+definitions:
+  domain.GenericMessage:
+    properties:
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: Checks if the API is working
+      produces:
+      - application/json
+      responses: {}
+      summary: Health endpoint
+      tags:
+      - health
+  /test-message:
+    get:
+      consumes:
+      - application/json
+      description: Returns a single user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.GenericMessage'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/domain.GenericMessage'
+      summary: Get user by ID
+      tags:
+      - users
+swagger: "2.0"
