@@ -22,7 +22,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: Returns a single user
+      description: Returns a message
       produces:
       - application/json
       responses:
@@ -34,7 +34,7 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/domain.GenericMessage'
-      summary: Get user by ID
+      summary: Test endpoint
       tags:
       - users
 swagger: "2.0"

@@ -33,7 +33,7 @@ const docTemplate = `{
         },
         "/test-message": {
             "get": {
-                "description": "Returns a single user",
+                "description": "Returns a message",
                 "consumes": [
                     "application/json"
                 ],
@@ -43,7 +43,7 @@ const docTemplate = `{
                 "tags": [
                     "users"
                 ],
-                "summary": "Get user by ID",
+                "summary": "Test endpoint",
                 "responses": {
                     "200": {
                         "description": "OK",

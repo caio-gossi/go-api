@@ -8,8 +8,8 @@ import (
 	"example.com/go-api/domain"
 )
 
-// @Summary Get user by ID
-// @Description Returns a single user
+// @Summary Test endpoint
+// @Description Returns a message
 // @Tags users
 // @Accept json
 // @Produce json
@@ -17,7 +17,7 @@ import (
 // @Failure 404 {object} domain.GenericMessage
 // @Router /test-message [get]
 func UserHandler(w http.ResponseWriter, r *http.Request) {
-	var response domain.GenericMessage = domain.GenericMessage{Message: "Hellow world"}
+	var response domain.GenericMessage = domain.GenericMessage{Message: "Hello world!"}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
